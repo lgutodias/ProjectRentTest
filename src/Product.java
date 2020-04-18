@@ -1,15 +1,13 @@
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
-//import Customer.Customer;
 
 public class Product {
 
     Scanner entry = new Scanner(System.in);
 
-    public ArrayList<Product> listFilm = new ArrayList<Product>();
+    public List<Product> listFilm = new ArrayList<Product>();
 
     //List<Product> listFilm = new ArrayList<Product>();
 
@@ -25,9 +23,7 @@ public class Product {
         this.genere = genere;
         this.rentalPrice = rentalPrice;
     }
-
-
-
+    
     //Acoes ou Metodos (Funcoes)
     public void registerFilm() {
     	Product film = new Product();
@@ -47,39 +43,51 @@ public class Product {
 
         listFilm.add(film);
     }
+    
+    public String getUserInput(String prompt) {
+    	System.out.println(prompt);
+    	Scanner input = new Scanner(System.in);
+    	
+    	return input.nextLine();
+    }
 
     public void locaFilm() {
 
         String nameFilm;
+        
+        //nameFilm = getUserInput("Enter a film name:");
 
         Customer c1 = new Customer();
 
         System.out.println("===== RENT FILM =====\n");
         System.out.println("TYPE THE FILM'S NAME: ");
-        nameFilm = entry.nextLine();
+        nameFilm = getUserInput("");
 
         for (Product film : listFilm) {
             if (film.getTitle().equals(nameFilm)) {
                 System.out.println(".::: A PESQUISA ENCONTROU :::." + 
-            "\n TITLE: " + getTitle() + 
-            "\n YEAR: " + getYear() + 
-            "\n GENERE " + getGenere() + 
-            "\n PRICE: " + getRentalPrice());
+            "\n TITLE: " + film.getTitle() + 
+            "\n YEAR: " + film.getYear() + 
+            "\n GENERE " + film.getGenere() + 
+            "\n PRICE: " + film.getRentalPrice());
 
+            } else {
+            	System.out.println("FILM NOT FOUND.");
+            	return;
             }
         }
-        System.out.println("FILM NOT FOUND.");
-
+  //      System.out.println("FILM NOT FOUND.");
+    
         if (!("FILM NOT FOUND".equals(nameFilm))) {
 
             System.out.println("WOULD YOU LIKE TO RENT THIS FILM? ");
             
 
-            String option = null;
+            String option = getUserInput("Enter y for Yes and n for No:");
+            option += option.toLowerCase();
 
             switch (option) {
-            case "s":
-            case "S":
+            case "y":
                 System.out.println("TYPE THE CUSTOMER'S E-MAIL: ");
                 String emailCustomer = entry.nextLine();
 
@@ -90,7 +98,6 @@ public class Product {
                     "\n EMAIL: " + c1.getEmail());
                     //"\n ENDERECO: " + c1.getEndereco() + 
                     //"\n TELEFONE: " + c1.getTelefone());
-
                     }
                 }
                 System.out.println("CUSTOMER NOT FOUND.");
@@ -101,9 +108,8 @@ public class Product {
                 }
 
                 break;
-
             case "n":
-            case "N":
+            	break;
 
 
             default:
@@ -115,8 +121,16 @@ public class Product {
     }
 
 
-    // Getters e Setters    
-    public void setListaFilm(ArrayList<Product> listFilm) {
+    // Getters e Setters
+    public Scanner getEntry() {
+        return entry;
+    }
+
+    public void setEntry(Scanner entry) {
+        this.entry = entry;
+    }
+    
+    public void setListFilm(List<Product> listFilm) {
         this.listFilm = listFilm;
     }
 
