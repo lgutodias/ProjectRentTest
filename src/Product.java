@@ -107,7 +107,7 @@ public class Product {
 
 
             default:
-                System.out.println("APERTE APENAS S PARA SIM OU N PARA NAO.");
+                System.out.println("PRESS Y FOR YES OR N FOR NO.");
                 break;
             }
             
