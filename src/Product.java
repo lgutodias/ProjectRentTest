@@ -81,13 +81,13 @@ public class Product {
             case "s":
             case "S":
                 System.out.println("TYPE THE CUSTOMER'S E-MAIL: ");
-                String cpfCustomer = entry.nextLine();
+                String emailCustomer = entry.nextLine();
 
                 for (Customer pc1 : c1.listCustomer) {
                     if (c1.getEmail().equals(c1.getEmail())) {
                         System.out.println(".::: A PESQUISA ENCONTROU :::." + 
                     "\n NOME: " + c1.getName() + 
-                    "\n CPF: " + c1.getEmail());
+                    "\n EMAIL: " + c1.getEmail());
                     //"\n ENDERECO: " + c1.getEndereco() + 
                     //"\n TELEFONE: " + c1.getTelefone());
 
@@ -95,7 +95,7 @@ public class Product {
                 }
                 System.out.println("CUSTOMER NOT FOUND.");
 
-                if (!("CUSTOMER NOT FOUND.".equals(cpfCustomer))) {
+                if (!("CUSTOMER NOT FOUND.".equals(emailCustomer))) {
 
 
                 }
