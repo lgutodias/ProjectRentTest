@@ -1,16 +1,19 @@
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 //import Customer.Customer;
 
+
 public class Product {
-
-    Scanner entry = new Scanner(System.in);
-
-    public ArrayList<Product> listFilm = new ArrayList<Product>();
-
+	
+	
+	Scanner entry = new Scanner(System.in);
+		  
+	public ArrayList<Product> listFilm = new ArrayList<Product>();
+	
     //List<Product> listFilm = new ArrayList<Product>();
 
     private String title;
@@ -26,7 +29,7 @@ public class Product {
         this.rentalPrice = rentalPrice;
     }
 
-
+    
 
     //Acoes ou Metodos (Funcoes)
     public void registerFilm() {
@@ -51,7 +54,8 @@ public class Product {
     public void locaFilm() {
 
         String nameFilm;
-
+        boolean result;
+        
         Customer c1 = new Customer();
 
         System.out.println("===== RENT FILM =====\n");
@@ -61,11 +65,11 @@ public class Product {
         for (Product film : listFilm) {
             if (film.getTitle().equals(nameFilm)) {
                 System.out.println(".::: A PESQUISA ENCONTROU :::." + 
-            "\n TITLE: " + getTitle() + 
-            "\n YEAR: " + getYear() + 
-            "\n GENERE " + getGenere() + 
-            "\n PRICE: " + getRentalPrice());
-
+            "\n TITLE: " + film.getTitle() + 
+            "\n YEAR: " + film.getYear() + 
+            "\n GENERE " + film.getGenere() + 
+            "\n PRICE: " + film.getRentalPrice());
+                
             }
         }
         System.out.println("FILM NOT FOUND.");
@@ -78,21 +82,21 @@ public class Product {
             String option = null;
 
             switch (option) {
-            case "s":
-            case "S":
+            case "y":
+            case "Y":
                 System.out.println("TYPE THE CUSTOMER'S E-MAIL: ");
                 String emailCustomer = entry.nextLine();
 
-                for (Customer pc1 : c1.listCustomer) {
-                    if (c1.getEmail().equals(c1.getEmail())) {
+                for (Customer C2 : c1.listCustomer) {
+					if (c1.getEmail().equals(c1.getEmail())) {
                         System.out.println(".::: A PESQUISA ENCONTROU :::." + 
                     "\n NOME: " + c1.getName() + 
                     "\n EMAIL: " + c1.getEmail());
                     //"\n ENDERECO: " + c1.getEndereco() + 
                     //"\n TELEFONE: " + c1.getTelefone());
-
-                    }
-                }
+                       
+                    }return;
+				}
                 System.out.println("CUSTOMER NOT FOUND.");
 
                 if (!("CUSTOMER NOT FOUND.".equals(emailCustomer))) {
@@ -104,8 +108,8 @@ public class Product {
 
             case "n":
             case "N":
-
-
+            	break;
+            	
             default:
                 System.out.println("PRESS Y FOR YES OR N FOR NO.");
                 break;

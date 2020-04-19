@@ -45,7 +45,8 @@ public class Main {
 		                        
 		                    case 5:
 		                    	film.locaFilm();
-
+		                    	break;
+		                    	
 		                    default:
 		                        System.out.println("Invalid option.");
 		                        break;
