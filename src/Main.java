@@ -15,7 +15,7 @@ public class Main {
 
 		int menu = 0;
 		int option = 0;
-
+		
 		do {
 			System.out.println("===== ULTRA VISION RENTAL SHOP =====");
 			System.out.println("1 - REGISTER CUSTOMER");
@@ -46,7 +46,11 @@ public class Main {
 		                    case 5:
 		                    	film.locaFilm();
 		                    	break;
+<<<<<<< HEAD
 		                    	
+=======
+
+>>>>>>> 99ed1d65da5d6fb7edd9d6e1f0189e6ca7ef1b20
 		                    default:
 		                        System.out.println("Invalid option.");
 		                        break;
