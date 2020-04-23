@@ -1,29 +1,14 @@
 
 import java.util.ArrayList;
-<<<<<<< HEAD
-import java.util.Date;
-import java.util.Iterator;
-=======
->>>>>>> 99ed1d65da5d6fb7edd9d6e1f0189e6ca7ef1b20
 import java.util.List;
 import java.util.Scanner;
 
-<<<<<<< HEAD
-=======
 public class Product {
 
     Scanner entry = new Scanner(System.in);
 
     public List<Product> listFilm = new ArrayList<Product>();
->>>>>>> 99ed1d65da5d6fb7edd9d6e1f0189e6ca7ef1b20
 
-public class Product {
-	
-	
-	Scanner entry = new Scanner(System.in);
-		  
-	public ArrayList<Product> listFilm = new ArrayList<Product>();
-	
     //List<Product> listFilm = new ArrayList<Product>();
 
     private String title;
@@ -38,13 +23,7 @@ public class Product {
         this.genere = genere;
         this.rentalPrice = rentalPrice;
     }
-<<<<<<< HEAD
-
     
-
-=======
-    
->>>>>>> 99ed1d65da5d6fb7edd9d6e1f0189e6ca7ef1b20
     //Acoes ou Metodos (Funcoes)
     public void registerFilm() {
     	Product film = new Product();
@@ -75,14 +54,10 @@ public class Product {
     public void locaFilm() {
 
         String nameFilm;
-<<<<<<< HEAD
-        boolean result;
-        
-=======
+        String Customer;
         
         //nameFilm = getUserInput("Enter a film name:");
 
->>>>>>> 99ed1d65da5d6fb7edd9d6e1f0189e6ca7ef1b20
         Customer c1 = new Customer();
 
         System.out.println("===== RENT FILM =====\n");
@@ -96,14 +71,10 @@ public class Product {
             "\n YEAR: " + film.getYear() + 
             "\n GENERE " + film.getGenere() + 
             "\n PRICE: " + film.getRentalPrice());
-<<<<<<< HEAD
-                
-=======
 
             } else {
             	System.out.println("FILM NOT FOUND.");
             	return;
->>>>>>> 99ed1d65da5d6fb7edd9d6e1f0189e6ca7ef1b20
             }
         }
   //      System.out.println("FILM NOT FOUND.");
@@ -112,34 +83,24 @@ public class Product {
 
             System.out.println("WOULD YOU LIKE TO RENT THIS FILM? ");
             
-
-            String option = getUserInput("Enter y for Yes and n for No:");
-            option += option.toLowerCase();
+	String option = entry.nextLine();
+            //String option = getUserInput("Enter y for Yes and n for No:");
+            //option += option.toLowerCase();
 
             switch (option) {
             case "y":
-<<<<<<< HEAD
-            case "Y":
-=======
->>>>>>> 99ed1d65da5d6fb7edd9d6e1f0189e6ca7ef1b20
                 System.out.println("TYPE THE CUSTOMER'S E-MAIL: ");
                 String emailCustomer = entry.nextLine();
 
-                for (Customer C2 : c1.listCustomer) {
-					if (c1.getEmail().equals(c1.getEmail())) {
+                for (Customer pc1 : c1.listCustomer) {
+                    if (c1.getEmail().equals(c1.getEmail())) {
                         System.out.println(".::: A PESQUISA ENCONTROU :::." + 
                     "\n NOME: " + c1.getName() + 
                     "\n EMAIL: " + c1.getEmail());
                     //"\n ENDERECO: " + c1.getEndereco() + 
                     //"\n TELEFONE: " + c1.getTelefone());
-<<<<<<< HEAD
-                       
-                    }return;
-				}
-=======
                     }
                 }
->>>>>>> 99ed1d65da5d6fb7edd9d6e1f0189e6ca7ef1b20
                 System.out.println("CUSTOMER NOT FOUND.");
 
                 if (!("CUSTOMER NOT FOUND.".equals(emailCustomer))) {
@@ -149,17 +110,11 @@ public class Product {
 
                 break;
             case "n":
-<<<<<<< HEAD
-            case "N":
-            	break;
-            	
-=======
             	break;
 
 
->>>>>>> 99ed1d65da5d6fb7edd9d6e1f0189e6ca7ef1b20
             default:
-                System.out.println("PRESS Y FOR YES OR N FOR NO.");
+                System.out.println("INVALID OPTION");
                 break;
             }
             
