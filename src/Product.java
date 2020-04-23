@@ -54,6 +54,7 @@ public class Product {
     public void locaFilm() {
 
         String nameFilm;
+        String Customer;
         
         //nameFilm = getUserInput("Enter a film name:");
 
@@ -82,9 +83,9 @@ public class Product {
 
             System.out.println("WOULD YOU LIKE TO RENT THIS FILM? ");
             
-
-            String option = getUserInput("Enter y for Yes and n for No:");
-            option += option.toLowerCase();
+	String option = entry.nextLine();
+            //String option = getUserInput("Enter y for Yes and n for No:");
+            //option += option.toLowerCase();
 
             switch (option) {
             case "y":
@@ -113,7 +114,7 @@ public class Product {
 
 
             default:
-                System.out.println("PRESS Y FOR YES OR N FOR NO.");
+                System.out.println("INVALID OPTION");
                 break;
             }
             
