@@ -2,6 +2,10 @@ package interfaces;
 
 public interface RegisterT {
 	
-	public void registerT();
+	public void addTitle();
+	
+	public void searchTitle();
 
 }
+
+	
