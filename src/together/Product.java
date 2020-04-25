@@ -95,10 +95,11 @@ public class Product {
                 System.out.println("TYPE THE CUSTOMER'S E-MAIL: ");
                 String emailCustomer = entry.nextLine();
 
-                for (Customer pc1 : c1.listCustomer) {
+                for (Customer pc1 : c1.customerList) {
                     if (c1.getEmail().equals(c1.getEmail())) {
                         System.out.println(".::: A PESQUISA ENCONTROU :::." + 
-                    "\n NOME: " + c1.getName() + 
+                    "\n FIRST NAME: " + c1.getFName() +
+                    "\n LAST NAME: " + c1.getLName() +
                     "\n EMAIL: " + c1.getEmail());
                     //"\n ENDERECO: " + c1.getEndereco() + 
                     //"\n TELEFONE: " + c1.getTelefone());

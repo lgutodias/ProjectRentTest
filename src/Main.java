@@ -2,11 +2,7 @@ import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-//import Customer.Customer;
-//import Product.Product;
-
 import together.Customer;
-import together.Customer2;
 import together.Product;
 
 public class Main {
@@ -15,7 +11,6 @@ public class Main {
 
 		Scanner entry = new Scanner(System.in);
 		Customer c1 = new Customer();
-		Customer2 c2 = new Customer2();
 		Product film = new Product();
 
 		int menu = 0;
@@ -33,7 +28,7 @@ public class Main {
 		                switch (option) {
 
 		                    case 1:
-		                        c2.registerCustomer2();
+		                        c1.addCustomer();
 		                        break;
 
 		                    case 2:

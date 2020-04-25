@@ -1,140 +1,121 @@
 package together;
-
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-//import Main.Main;
-//import Conta.Conta;
+import interfaces.RegisterC;
 
-	public class Customer {
+public class Customer implements RegisterC {
 
-	    // Attributes
-	    private String name;
-	    private String email;
-	    //private int membershipID;
-	    //private int quantityOfRents;
+	private String fname;
+	private String lname;
+	private String email;
 
-	    // Constructor
-	    public Customer() {
-	        this.name = name;
-	        this.email = email;
-	        //this.membershipID = membershipID;
-	        //this.quantityOfRents = quantityOfRents;
-	    }
+	public Customer() {
 
-	    Scanner entry = new Scanner(System.in);
+		this.fname = fname;
+		this.lname = lname;
+		this.email = email;
 
-	    public ArrayList<Customer> listCustomer = new ArrayList<Customer>();
-
-	    // Methods (Acoes ou Funcoes)
-	    public void registerCustomer() {
-
-	    	Customer c1 = new Customer();
-
-	        System.out.println("===== REGISTER CUSTOMER =====");
-
-	        System.out.println("NAME: ");
-	        c1.setName(entry.nextLine());
-
-	        System.out.println("EMAIL: ");
-	        c1.setEmail(entry.nextLine());
-
-	        //System.out.println("MEMBERSHIP ID: ");
-	        //c1.setEndereco(entrada.nextLine());
-
-	        //System.out.println("QUANTITY OF RENTS: ");
-	        //cliente.setTelefone(entrada.nextLine());
-
-	        listCustomer.add(c1);
-
-	    }
-
-	    public void searchCustomer() {
-
-	        String email;
-	        boolean result;
-
-	        System.out.println("TYPE EMAIL: ");
-
-	        email = entry.nextLine(); 
-
-	        for (Customer c1 : listCustomer) {
-	            if (c1.getEmail().equals(email)) {
-	                System.out.println("Customer: "+ c1.getName() + " | " + "Email: " + c1.getEmail());
-	                return;
-	            }
-	        }
-	        System.out.println("CUSTOMER NOT FOUND.");
-	    }
-
-	    public void deleteCustomer() {
-
-	        String email;
-	        String choice = null;
-
-	        System.out.println("TYPE EMAIL: ");
-	        email = entry.nextLine();
-
-	        for (Customer c1 : listCustomer) {
-	            if (c1.getEmail().equals(email)) {
-	                System.out.println("Customer: "+ c1.getName() + " | " + "Email: "+c1.getEmail());
-	            }
-	        }
-
-	        System.out.println("CONFIRM YOU WANT TO DELETE THIS CUSTOMER?(Y/N) ");
-	        choice = entry.nextLine();
-
-	        if (choice == "y") {
-	            listCustomer.remove(email);
-	        }
-	        else {
-	            return;
-	        }
-
-
-	        return;
-	    }
-
-	    public Scanner getEntry() {
-	        return entry;
-	    }
-
-	    public void setEntry(Scanner entry) {
-	        this.entry = entry;
-	    }
-
-	    public String getName() {
-	        return name;
-	    }
-
-	    public void setName(String name) {
-	        this.name = name;
-	    }
-
-	    public String getEmail() {
-	        return email;
-	    }
-
-	    public void setEmail(String email) {
-	        this.email = email;
-	    }
-
-	    /*public String getEndereco() {
-	        return endereco;
-	    }
-
-	    public void setEndereco(String endereco) {
-	        this.endereco = endereco;
-	    }
-
-	    public String getTelefone() {
-	        return telefone;
-	    }
-
-	    public void setTelefone(String telefone) {
-	        this.telefone = telefone;
-	    }*/
 	}
 
+	Scanner entry = new Scanner(System.in);
 
+	public ArrayList<Customer> customerList = new ArrayList<Customer>();
 
+	@Override
+	public void addCustomer() {
+		Customer c1 = new Customer();
+
+        System.out.println("===== REGISTER CUSTOMER =====");
+
+        System.out.println("FIRST NAME: ");
+        c1.setFName(entry.nextLine());
+        
+        System.out.println("LAST NAME: ");
+        c1.setLName(entry.nextLine());
+
+        System.out.println("EMAIL: ");
+        c1.setEmail(entry.nextLine());
+
+        customerList.add(c1);
+	}
+
+	@Override
+	public void searchCustomer() {
+
+        System.out.println("TYPE EMAIL: ");
+
+        email = entry.nextLine(); 
+
+        for (Customer c1 : customerList) {
+            if (c1.getEmail().equals(email)) {
+                System.out.println("Customer: "+ c1.getFName() + " " + c1.getLName() + " | " + "Email: "+ c1.getEmail());
+                return;
+            } else {
+            	System.out.println("CUSTOMER NOT FOUND.");
+            }
+        }       
+	}
+
+	@Override
+	public void deleteCustomer() {
+		
+        //String choice;
+
+        System.out.println("TYPE EMAIL: ");
+        email = entry.nextLine();
+
+        for (Customer c1 : customerList) {
+            if (c1.getEmail().equals(email)) {
+                System.out.println("Customer: " + c1.getFName() + " " + c1.getLName() + " | " + "Email: " + c1.getEmail());
+            }
+        }
+
+        System.out.println("CONFIRM YOU WANT TO DELETE THIS CUSTOMER?(Y/N) ");
+        String choice = entry.nextLine();
+
+        if (choice == "y") {
+            customerList.remove(email);
+            //System.out.println("CUSTOMER SUCCESSFULY DELETED");
+        }
+        else {
+            return;
+        }
+        return;
+    }
+	
+	
+	
+	
+	
+	public Scanner getEntry() {
+        return entry;
+    }
+
+    public void setEntry(Scanner entry) {
+        this.entry = entry;
+    }
+    
+    public String getFName() {
+        return fname;
+    }
+
+    public void setFName(String fname) {
+        this.fname = fname;
+    }
+    
+    public String getLName() {
+        return lname;
+    }
+
+    public void setLName(String lname) {
+        this.lname = lname;
+    }
+        
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+}
