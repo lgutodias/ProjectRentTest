@@ -2,6 +2,10 @@ package interfaces;
 
 public interface RegisterC {
 	
-	public void registerCustomer2();
+	public void addCustomer();
+	
+	public void searchCustomer();
+	
+	public void deleteCustomer();
 
 }
