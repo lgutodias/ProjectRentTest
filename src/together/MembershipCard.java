@@ -1,3 +1,4 @@
+package together;
 public class MembershipCard {
 
 	   private int points;

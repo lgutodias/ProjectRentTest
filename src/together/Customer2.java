@@ -1,3 +1,4 @@
+package together;
 import java.util.ArrayList;
 import java.util.Scanner;
 import interfaces.RegisterC;

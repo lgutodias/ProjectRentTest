@@ -5,6 +5,10 @@ import java.util.Scanner;
 //import Customer.Customer;
 //import Product.Product;
 
+import together.Customer;
+import together.Customer2;
+import together.Product;
+
 public class Main {
 
 	public static void main(String[] args) {
