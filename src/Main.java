@@ -11,6 +11,7 @@ public class Main {
 
 		Scanner entry = new Scanner(System.in);
 		Customer c1 = new Customer();
+		Customer2 c2 = new Customer2();
 		Product film = new Product();
 
 		int menu = 0;
@@ -28,7 +29,7 @@ public class Main {
 		                switch (option) {
 
 		                    case 1:
-		                        c1.registerCustomer();
+		                        c2.registerCustomer2();
 		                        break;
 
 		                    case 2:
