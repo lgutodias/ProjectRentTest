@@ -61,7 +61,7 @@ public class Customer implements RegisterC {
 		
 		String email;
         String choice;
-        Customer customer;
+        Customer customer = null;
 
         System.out.println("TYPE EMAIL: ");
         email = entry.nextLine();
