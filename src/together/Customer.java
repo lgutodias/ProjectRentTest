@@ -59,7 +59,9 @@ public class Customer implements RegisterC {
 	@Override
 	public void deleteCustomer() {
 		
-        //String choice;
+		String email;
+        String choice;
+        Customer customer;
 
         System.out.println("TYPE EMAIL: ");
         email = entry.nextLine();
@@ -67,14 +69,16 @@ public class Customer implements RegisterC {
         for (Customer c1 : customerList) {
             if (c1.getEmail().equals(email)) {
                 System.out.println("Customer: " + c1.getFName() + " " + c1.getLName() + " | " + "Email: " + c1.getEmail());
+                customer = c1;
+                break;
             }
         }
 
         System.out.println("CONFIRM YOU WANT TO DELETE THIS CUSTOMER?(Y/N) ");
-        String choice = entry.nextLine();
+        choice = entry.nextLine();
 
         if (choice == "y") {
-            customerList.remove(email);
+            customerList.remove(customer);
             //System.out.println("CUSTOMER SUCCESSFULY DELETED");
         }
         else {
