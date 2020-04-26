@@ -77,9 +77,9 @@ public class Customer implements RegisterC {
         System.out.println("CONFIRM YOU WANT TO DELETE THIS CUSTOMER?(Y/N) ");
         choice = entry.nextLine();
 
-        if (choice == "y") {
-            customerList.remove(customer);
-            //System.out.println("CUSTOMER SUCCESSFULY DELETED");
+        if (choice.equalsIgnoreCase("y")) {
+        	customerList.remove(customer);
+            System.out.println("CUSTOMER HAS BEEN DELETED");
         }
         else {
             return;
