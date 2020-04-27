@@ -7,8 +7,6 @@ import java.util.Scanner;
 
 public class Product {
 
-    Scanner entry = new Scanner(System.in);
-
     public ArrayList<Product> listFilm = new ArrayList<Product>();
 
     //List<Product> listFilm = new ArrayList<Product>();
@@ -17,87 +15,80 @@ public class Product {
     private int year;
     private String genere;
     private double rentalPrice;
-
-    public Product() {
-
-        this.title = title;
-        this.year = year;
-        this.genere = genere;
-        this.rentalPrice = rentalPrice;
-    }
-
-
+    
+    public Product() {}
 
     //Acoes ou Metodos (Funcoes)
     public void registerFilm() {
     	Product film = new Product();
         System.out.println("===== REGISTER FILM =====");
 
-        System.out.println("TITLE: ");
-        film.setTitle(entry.nextLine());
+        film.setTitle(Keyboard.input("TITLE: "));
 
-        System.out.println("GENERE: ");
-        film.setGenere(entry.nextLine());
+        film.setGenere(Keyboard.input("GENERE: "));
 
-        System.out.println("YEAR: ");
-        film.year = Integer.parseInt(entry.nextLine());
+        film.year = Integer.parseInt(Keyboard.input("YEAR: "));
 
-        System.out.println("RENTAL PRICE: ");
-        film.rentalPrice = Double.parseDouble(entry.nextLine());
+        film.rentalPrice = Double.parseDouble(Keyboard.input("RENTAL PRICE: "));
 
         listFilm.add(film);
     }
 
-    public void locaFilm() {
+    public void locaFilm(ArrayList<Customer> customers) {
 
         String nameFilm;
 
-        Customer c1 = new Customer();
+        Customer c1 = null;
+        Product p = null;
 
         System.out.println("===== RENT FILM =====\n");
-        System.out.println("TYPE THE FILM'S NAME: ");
-        nameFilm = entry.nextLine();
+        nameFilm = Keyboard.input("TYPE THE FILM'S NAME: ");
 
         for (Product film : listFilm) {
-            if (film.getTitle().equals(nameFilm)) {
-                System.out.println(".::: A PESQUISA ENCONTROU :::." + 
-            "\n TITLE: " + getTitle() + 
-            "\n YEAR: " + getYear() + 
-            "\n GENERE " + getGenere() + 
-            "\n PRICE: " + getRentalPrice());
+            if (film.getTitle().equalsIgnoreCase(nameFilm)) {
+            	System.out.println(".::: A PESQUISA ENCONTROU :::." + 
+            			"\n TITLE: " + film.getTitle() + 
+            			"\n YEAR: " + film.getYear() + 
+            			"\n GENERE " + film.getGenere() + 
+            			"\n PRICE: " + film.getRentalPrice());
+                
+                p = film;
+                System.out.println("<< Film encontrado >>");
+                break;
 
             }
         }
-        System.out.println("FILM NOT FOUND.");
 
-        if (!("FILM NOT FOUND".equals(nameFilm))) {
+        if (p != null) {
 
-            System.out.println("WOULD YOU LIKE TO RENT THIS FILM? ");
+        	System.out.println("Name: " + p.title);
             
-
-            String option = null;
+            String option = Keyboard.input("WOULD YOU LIKE TO RENT THIS FILM (y/n)? ");
 
             switch (option) {
-            case "s":
-            case "S":
-                System.out.println("TYPE THE CUSTOMER'S E-MAIL: ");
-                String cpfCustomer = entry.nextLine();
+            case "y":
+            case "Y":
+                
+                String cpfCustomer = Keyboard.input("TYPE THE CUSTOMER'S E-MAIL: ");
 
-                for (Customer pc1 : c1.listCustomer) {
-                    if (c1.getEmail().equals(c1.getEmail())) {
+                for (Customer customer : customers) {
+                    if (customer.getEmail().equalsIgnoreCase(cpfCustomer)) {
                         System.out.println(".::: A PESQUISA ENCONTROU :::." + 
-                    "\n NOME: " + c1.getName() + 
-                    "\n CPF: " + c1.getEmail());
+                    "\n NOME: " + customer.getName() + 
+                    "\n CPF: " + customer.getEmail());
                     //"\n ENDERECO: " + c1.getEndereco() + 
                     //"\n TELEFONE: " + c1.getTelefone());
-
+                        c1 = customer;
+                        break;
                     }
                 }
-                System.out.println("CUSTOMER NOT FOUND.");
+                
 
-                if (!("CUSTOMER NOT FOUND.".equals(cpfCustomer))) {
-
-
+                if (c1 == null) {
+                	System.out.println("CUSTOMER NOT FOUND.");
+                } else {
+                	// Para teste
+                	System.out.println("Customer name: " + c1.getName());
                 }
 
                 break;
@@ -111,6 +102,8 @@ public class Product {
                 break;
             }
             
+        } else {
+        	System.out.println("FILME NOT FOUND");
         }
     }
 
@@ -151,4 +144,16 @@ public class Product {
     public void setRentalPrice(double rentalPrice) {
         this.rentalPrice = rentalPrice;
     }
+
+	public ArrayList<Product> getListFilm() {
+		return listFilm;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [title=" + title + ", year=" + year + ", genere=" + genere + ", rentalPrice=" + rentalPrice
+				+ "]";
+	}
+    
+    
 }

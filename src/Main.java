@@ -12,6 +12,29 @@ public class Main {
 		Scanner entry = new Scanner(System.in);
 		Customer c1 = new Customer();
 		Product film = new Product();
+		
+		// ----------- Default Customer  ----------
+		Customer john = new Customer();
+		john.setName("John");
+		john.setEmail("john@gmail.com");
+		// Adding default customer 
+		c1.getListCustomer().add(john);
+		
+		// ----------- Default Film ---------------
+		Product spiderMan = new Product();
+		spiderMan.setTitle("Spider Man");
+		spiderMan.setGenere("Action");
+		spiderMan.setYear(2020);
+		spiderMan.setRentalPrice(2.0);
+		// Adding default film
+		film.getListFilm().add(spiderMan);
+		
+		// Just showing default customer and film to test
+		System.out.println("=============== Customer ==================");
+		System.out.println(c1.getListCustomer().get(0));
+		System.out.println("================== Filme ==================");
+		System.out.println(film.getListFilm().get(0));
+		System.out.println("===========================================");
 
 		int menu = 0;
 		int option = 0;
@@ -44,7 +67,7 @@ public class Main {
 		                        break;
 		                        
 		                    case 5:
-		                    	film.locaFilm();
+		                    	film.locaFilm(c1.getListCustomer());
 
 		                    default:
 		                        System.out.println("Invalid option.");

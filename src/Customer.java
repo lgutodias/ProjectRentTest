@@ -21,8 +21,6 @@ import java.util.Scanner;
 	        //this.quantityOfRents = quantityOfRents;
 	    }
 
-	    Scanner entry = new Scanner(System.in);
-
 	    public ArrayList<Customer> listCustomer = new ArrayList<Customer>();
 
 	    // Methods (Acoes ou Funcoes)
@@ -32,17 +30,9 @@ import java.util.Scanner;
 
 	        System.out.println("===== REGISTER CUSTOMER =====");
 
-	        System.out.println("NAME: ");
-	        c1.setName(entry.nextLine());
+	        c1.setName(Keyboard.input("NAME: "));
 
-	        System.out.println("EMAIL: ");
-	        c1.setEmail(entry.nextLine());
-
-	        //System.out.println("MEMBERSHIP ID: ");
-	        //c1.setEndereco(entrada.nextLine());
-
-	        //System.out.println("QUANTITY OF RENTS: ");
-	        //cliente.setTelefone(entrada.nextLine());
+	        c1.setEmail(Keyboard.input("EMAIL: "));
 
 	        listCustomer.add(c1);
 
@@ -53,9 +43,7 @@ import java.util.Scanner;
 	        String email;
 	        boolean result;
 
-	        System.out.println("TYPE EMAIL: ");
-
-	        email = entry.nextLine(); 
+	        email = Keyboard.input("TYPE EMAIL: ");
 
 	        for (Customer c1 : listCustomer) {
 	            if (c1.getEmail().equals(email)) {
@@ -71,8 +59,7 @@ import java.util.Scanner;
 	        String email;
 	        String choice = null;
 
-	        System.out.println("TYPE EMAIL: ");
-	        email = entry.nextLine();
+	        email = Keyboard.input("TYPE EMAIL: ");
 
 	        for (Customer c1 : listCustomer) {
 	            if (c1.getEmail().equals(email)) {
@@ -80,26 +67,12 @@ import java.util.Scanner;
 	            }
 	        }
 
-	        System.out.println("CONFIRM YOU WANT TO DELETE THIS CUSTOMER?(Y/N) ");
-	        choice = entry.nextLine();
+	        choice = Keyboard.input("CONFIRM YOU WANT TO DELETE THIS CUSTOMER?(Y/N)");
 
 	        if (choice == "y") {
 	            listCustomer.remove(email);
 	        }
-	        else {
-	            return;
-	        }
-
-
-	        return;
-	    }
-
-	    public Scanner getEntry() {
-	        return entry;
-	    }
-
-	    public void setEntry(Scanner entry) {
-	        this.entry = entry;
+	        
 	    }
 
 	    public String getName() {
@@ -118,21 +91,18 @@ import java.util.Scanner;
 	        this.email = email;
 	    }
 
-	    /*public String getEndereco() {
-	        return endereco;
-	    }
+		public ArrayList<Customer> getListCustomer() {
+			return listCustomer;
+		}
 
-	    public void setEndereco(String endereco) {
-	        this.endereco = endereco;
-	    }
+		public void setListCustomer(ArrayList<Customer> listCustomer) {
+			this.listCustomer = listCustomer;
+		}
 
-	    public String getTelefone() {
-	        return telefone;
-	    }
-
-	    public void setTelefone(String telefone) {
-	        this.telefone = telefone;
-	    }*/
+		@Override
+		public String toString() {
+			return "Customer [name=" + name + ", email=" + email + "]";
+		}
 	}
 
 
