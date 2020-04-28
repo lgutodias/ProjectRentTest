@@ -41,17 +41,20 @@ import java.util.Scanner;
 	    public void searchCustomer() {
 
 	        String email;
-	        boolean result;
-
+	        Customer customer = null;
 	        email = Keyboard.input("TYPE EMAIL: ");
 
 	        for (Customer c1 : listCustomer) {
 	            if (c1.getEmail().equals(email)) {
 	                System.out.println("Customer: "+ c1.getName() + " | " + "Email: " + c1.getEmail());
-	                return;
+	                customer = c1;
+	                break;
 	            }
 	        }
-	        System.out.println("CUSTOMER NOT FOUND.");
+	        
+	        if(customer == null) {
+	        	System.out.println("CUSTOMER NOT FOUND.");
+	        }
 	    }
 
 	    public void deleteCustomer() {
