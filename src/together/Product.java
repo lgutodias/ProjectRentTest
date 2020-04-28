@@ -168,5 +168,8 @@ public class Product {
 
     public void setRentalPrice(double rentalPrice) {
         this.rentalPrice = rentalPrice;
-    }
+    } 
 }
+	
+	
+ Sout
