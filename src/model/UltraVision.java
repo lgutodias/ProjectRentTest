@@ -1,5 +1,8 @@
 package model;
+<<<<<<< HEAD
 
+=======
+>>>>>>> d0986ff8b4c19d675d222afd5c46bf4a2d40fae2
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -161,11 +164,11 @@ final class BoxSet extends Title implements TV {
 		this.season = season;
 	}
 	
-}
+
 
 // =========== The Lovers =====================
 
-class Customer {
+//class Customer {
 	
 	private String name;
 	private MembershipPlan<?> membership;
