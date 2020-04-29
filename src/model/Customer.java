@@ -34,19 +34,25 @@ public class Customer implements RegisterC {
 	
 
 	@Override
-	public void searchCustomer() {
+	public Customer searchCustomer() {
 		
 		String email;
+		Customer customer = null;
 		
 		email = Keyboard.input("TYPE CUSTOMER'S EMAIL: ");
 		
 		for (Customer c1 : customerList) {
-			if (c1.getEmail().equals(email)) {
+			if (c1.getEmail().equalsIgnoreCase(email)) {
 				System.out.println("Customer: "+ c1.getFName() + " " + c1.getLName() + " | " + "Email: "+ c1.getEmail());
-				return;
+				customer = c1;
+				break;
 			}
 		}
-		System.out.println("CUSTOMER NOT FOUND.");
+		
+		if (customer == null) {
+			System.out.println("CUSTOMER NOT FOUND.");
+		}
+			return customer;
 	}
 	
 

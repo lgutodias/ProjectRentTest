@@ -2,8 +2,6 @@ import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-//import Product.Product;
-
 import model.Customer;
 import model.Keyboard;
 import model.Product;
@@ -82,7 +80,7 @@ public class Main {
 		                        break;
 		                        
 		                    case 5:
-		                    	film.locaFilm(c1.getcustomerList());
+		                    	film.locaFilm(c1.getCustomerList());
 
 		                    default:
 		                        System.out.println("Invalid option.");
