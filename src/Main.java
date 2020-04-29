@@ -2,8 +2,12 @@ import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-//import Customer.Customer;
+import model.Customer;
 //import Product.Product;
+
+import model.Keyboard;
+import model.Product;
+import model.Rental;
 
 public class Main {
 
@@ -12,13 +16,15 @@ public class Main {
 		Scanner entry = new Scanner(System.in);
 		Customer c1 = new Customer();
 		Product film = new Product();
+		Rental r = new Rental();
 		
 		// ----------- Default Customer  ----------
 		Customer john = new Customer();
-		john.setName("John");
+		john.setFName("John");
+		john.setLName("Snow");
 		john.setEmail("john@gmail.com");
 		// Adding default customer 
-		c1.getListCustomer().add(john);
+		c1.getCustomerList().add(john);
 		
 		// ----------- Default Film ---------------
 		Product spiderMan = new Product();
@@ -31,7 +37,7 @@ public class Main {
 		
 		// Just showing default customer and film to test
 		System.out.println("=============== Customer ==================");
-		System.out.println(c1.getListCustomer().get(0));
+		System.out.println(c1.getCustomerList().get(0));
 		System.out.println("================== Filme ==================");
 		System.out.println(film.getListFilm().get(0));
 		System.out.println("===========================================");
@@ -51,11 +57,20 @@ public class Main {
 		                switch (option) {
 
 		                    case 1:
-		                        c1.registerCustomer();
+		                        c1.addCustomer();
 		                        break;
 
 		                    case 2:
-		                        c1.searchCustomer();
+		                    	Customer c = new Customer();
+		                        c = c1.searchCustomer();
+		                        if (Keyboard.input("Voce deseja salvar no Rental y or n").equalsIgnoreCase("y")) {
+		                        	
+		                        	if (c != null) {
+		                        		r.setCustomer(c);
+		                        	} else {
+		                        		System.out.println("There is no customer to store");
+		                        	}
+ 		                        }
 		                        break;
 
 		                    case 3:
@@ -67,7 +82,7 @@ public class Main {
 		                        break;
 		                        
 		                    case 5:
-		                    	film.locaFilm(c1.getListCustomer());
+		                    	film.locaFilm(c1.getcustomerList());
 
 		                    default:
 		                        System.out.println("Invalid option.");
