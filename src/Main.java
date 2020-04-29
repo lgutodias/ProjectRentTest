@@ -2,9 +2,9 @@ import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import model.Customer;
 //import Product.Product;
 
+import model.Customer;
 import model.Keyboard;
 import model.Product;
 import model.Rental;
