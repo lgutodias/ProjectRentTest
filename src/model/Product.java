@@ -75,8 +75,8 @@ public class Product {
                 for (Customer customer : customers) {
                     if (customer.getEmail().equalsIgnoreCase(cpfCustomer)) {
                         System.out.println(".::: A PESQUISA ENCONTROU :::." + 
-                    "\n NOME: " + customer.getName() + 
-                    "\n CPF: " + customer.getEmail());
+                    "\n NAME: " + customer.getFName() + 
+                    "\n EMAIL: " + customer.getEmail());
                     //"\n ENDERECO: " + c1.getEndereco() + 
                     //"\n TELEFONE: " + c1.getTelefone());
                         c1 = customer;
@@ -89,7 +89,7 @@ public class Product {
                 	System.out.println("CUSTOMER NOT FOUND.");
                 } else {
                 	// Para teste
-                	System.out.println("Customer name: " + c1.getName());
+                	System.out.println("Customer name: " + c1.getFName());
                 }
 
                 break;
