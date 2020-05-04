@@ -18,3 +18,10 @@
 /UltraVision.class
 /Video.class
 /VideoLover.class
+/BoxSet$Customer.class
+/BoxSet$MembershipPlan.class
+/BoxSet$Musiclover.class
+/BoxSet$Premium.class
+/BoxSet$TVLover.class
+/BoxSet$VideoLover.class
+/BoxSet$MusicLover.class

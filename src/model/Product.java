@@ -61,22 +61,22 @@ public class Product {
         }
 
         if (p != null) {
-
+        	Scanner entry = new Scanner(System.in);
         	System.out.println("Name: " + p.title);
             
-            String option = Keyboard.input("WOULD YOU LIKE TO RENT THIS FILM (y/n)? ");
-
+        	System.out.println("WOULD YOU LIKE TO RENT THIS FILM (y/n)? ");
+            
             switch (option) {
             case "y":
             case "Y":
                 
-                String cpfCustomer = Keyboard.input("TYPE THE CUSTOMER'S E-MAIL: ");
+            	//Scanner entry = new Scanner(System.in);
 
                 for (Customer customer : customers) {
-                    if (customer.getEmail().equalsIgnoreCase(cpfCustomer)) {
+                    if (customer.getCpf().get) {
                         System.out.println(".::: A PESQUISA ENCONTROU :::." + 
-                    "\n NAME: " + customer.getFName() + 
-                    "\n EMAIL: " + customer.getEmail());
+                    "\n NAME: " + customer.getName() + 
+                    "\n CPF: " + customer.getCpf());
                     //"\n ENDERECO: " + c1.getEndereco() + 
                     //"\n TELEFONE: " + c1.getTelefone());
                         c1 = customer;
@@ -89,7 +89,7 @@ public class Product {
                 	System.out.println("CUSTOMER NOT FOUND.");
                 } else {
                 	// Para teste
-                	System.out.println("Customer name: " + c1.getFName());
+                	System.out.println("Customer name: " + c1.getName());
                 }
 
                 break;

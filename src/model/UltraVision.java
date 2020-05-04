@@ -19,7 +19,7 @@ public class UltraVision {
 		TitleInterface p3 = new Movie();
 		TitleInterface p4 = new BoxSet();
 		
-		Musiclover msl = new Musiclover();
+		MusicLover msl = new MusicLover();
 		
 		if (msl.size() <= 4) {
 			msl.add(s1);
@@ -164,7 +164,7 @@ final class BoxSet extends Title implements TV {
 
 // =========== The Lovers =====================
 
-//class Customer {
+class Customer {
 	
 	private String name;
 	private MembershipPlan<?> membership;
@@ -201,7 +201,7 @@ interface MembershipPlan<T> {
 	public T get(int index);
 }
 
-class Musiclover implements MembershipPlan<Music> {
+class MusicLover implements MembershipPlan<Music> {
 	
 	private List<Music> musics = new ArrayList<>();
 	
@@ -346,3 +346,4 @@ class Premium implements MembershipPlan<TitleInterface> {
 	}
 }
 
+}

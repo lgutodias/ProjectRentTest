@@ -1,19 +1,21 @@
 package model;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 import interfaces.RegisterC;
 
 public class Customer implements RegisterC {
 	
 	// Attributes
-	private String fname;
-	private String lname;
-	private String email;
+	private String name;
+	private int cpf;
 	
 	// Constructor
 	public Customer() {}
 	
 	public ArrayList<Customer> customerList = new ArrayList<>();
 	
+	Scanner entry = new Scanner(System.in);
 	
 	@Override
 	public void addCustomer() {
@@ -21,12 +23,6 @@ public class Customer implements RegisterC {
 		Customer c1 = new Customer();
 		
 		System.out.println("..........::::: ADD NEW CUSTOMER :::::..........");
-		
-		c1.setFName(Keyboard.input("FIRST NAME: "));
-		
-		c1.setLName(Keyboard.input("LAST NAME: "));
-		
-		c1.setEmail(Keyboard.input("EMAIL: "));
 		
 		customerList.add(c1);
 			
@@ -36,14 +32,13 @@ public class Customer implements RegisterC {
 	@Override
 	public Customer searchCustomer() {
 		
-		String email;
+		int cpf;
 		Customer customer = null;
-		
-		email = Keyboard.input("TYPE CUSTOMER'S EMAIL: ");
+		Scanner entry = new Scanner(System.in);
 		
 		for (Customer c1 : customerList) {
-			if (c1.getEmail().equalsIgnoreCase(email)) {
-				System.out.println("Customer: "+ c1.getFName() + " " + c1.getLName() + " | " + "Email: "+ c1.getEmail());
+			if () {
+				System.out.println("Customer: "+ c1.getName() + " | " + "Cpf: "+ c1.getCpf());
 				customer = c1;
 				break;
 			}
@@ -59,46 +54,38 @@ public class Customer implements RegisterC {
 	@Override
 	public void deleteCustomer() {
 		
-		String email;
+		int cpf;
 		String choice = null;
 		
-		email = Keyboard.input("TYPE CUSTOMER'S EMAIL: ");
+		
 		
 		for (Customer c1 : customerList) {
-			if (c1.getEmail().equals(email)) {
-				System.out.println("Customer: "+ c1.getFName() + " " + c1.getLName() + " | " + "Email: "+ c1.getEmail());
+			if (c1.getCpf().equals(cpf)) {
+				System.out.println("Customer: "+ c1.getName() + " " + " | " + "CPF: "+ c1.getCpf());
 			}
 		}
 		
 		choice = Keyboard.input("DO YOU CONFIRM THAT WANT TO DELETE THIS CUSTOMER? (Y/N)");
 		
 		if (choice == "y") {
-			customerList.remove(email);
+			customerList.remove(cpf);
 		}
 	}
 	
-	public String getFName() {
-        return fname;
+	public String getName() {
+        return name;
     }
 
-    public void setFName(String fname) {
-        this.fname = fname;
+    public void setName(String fname) {
+        this.name = fname;
     }
-    
-    public String getLName() {
-        return lname;
-    }
-
-    public void setLName(String lname) {
-        this.lname = lname;
-    }
-        
-    public String getEmail() {
-        return email;
+               
+    public int getCpf() {
+        return cpf;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCpf(int cpf) {
+        this.cpf = cpf;
     }
     
     public ArrayList<Customer> getCustomerList() {
@@ -111,7 +98,7 @@ public class Customer implements RegisterC {
 
 	@Override
 	public String toString() {
-		return "Customer [fname=" + fname + ", lname=" + lname + ", email=" + email + ", customerList=" + customerList
+		return "Customer [name=" + name + ", cpf=" + cpf + ", customerList=" + customerList
 				+ "]";
 	} 
 }

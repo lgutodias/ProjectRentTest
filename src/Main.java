@@ -18,9 +18,8 @@ public class Main {
 		
 		// ----------- Default Customer  ----------
 		Customer john = new Customer();
-		john.setFName("John");
-		john.setLName("Snow");
-		john.setEmail("john@gmail.com");
+		john.setName("John");
+		john.setCpf("");
 		// Adding default customer 
 		c1.getCustomerList().add(john);
 		
