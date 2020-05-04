@@ -10,27 +10,30 @@ public class Product {
 
     public ArrayList<Product> listFilm = new ArrayList<Product>();
 
-    //List<Product> listFilm = new ArrayList<Product>();
+   
 
     private String title;
     private int year;
     private String genere;
     private double rentalPrice;
+    private String email;
+    private String option;
     
     public Product() {}
 
     //Acoes ou Metodos (Funcoes)
     public void registerFilm() {
+    	Scanner entry = new Scanner(System.in);
     	Product film = new Product();
         System.out.println("===== REGISTER FILM =====");
 
-        film.setTitle(Keyboard.input("TITLE: "));
+        System.out.println("TITLE: ");
 
-        film.setGenere(Keyboard.input("GENERE: "));
+        System.out.println("GENERE: ");
 
-        film.year = Integer.parseInt(Keyboard.input("YEAR: "));
+        System.out.println("YEAR: ");
 
-        film.rentalPrice = Double.parseDouble(Keyboard.input("RENTAL PRICE: "));
+        System.out.println("RENTAL PRICE: ");
 
         listFilm.add(film);
     }
@@ -66,17 +69,17 @@ public class Product {
             
         	System.out.println("WOULD YOU LIKE TO RENT THIS FILM (y/n)? ");
             
-            switch (option) {
+           
+			switch (option) {
             case "y":
             case "Y":
-                
-            	//Scanner entry = new Scanner(System.in);
-
+           
+            	            	
                 for (Customer customer : customers) {
-                    if (customer.getCpf().get) {
+                    if (customer.getEmail().equalsIgnoreCase(email)) {
                         System.out.println(".::: A PESQUISA ENCONTROU :::." + 
                     "\n NAME: " + customer.getName() + 
-                    "\n CPF: " + customer.getCpf());
+                    "\n CPF: " + customer.getEmail());
                     //"\n ENDERECO: " + c1.getEndereco() + 
                     //"\n TELEFONE: " + c1.getTelefone());
                         c1 = customer;

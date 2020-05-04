@@ -19,7 +19,7 @@ public class Main {
 		// ----------- Default Customer  ----------
 		Customer john = new Customer();
 		john.setName("John");
-		john.setCpf("");
+		john.setEmail("john@email.com");
 		// Adding default customer 
 		c1.getCustomerList().add(john);
 		
@@ -33,11 +33,11 @@ public class Main {
 		film.getListFilm().add(spiderMan);
 		
 		// Just showing default customer and film to test
-		System.out.println("=============== Customer ==================");
+		/*System.out.println("=============== Customer ==================");
 		System.out.println(c1.getCustomerList().get(0));
 		System.out.println("================== Filme ==================");
 		System.out.println(film.getListFilm().get(0));
-		System.out.println("===========================================");
+		System.out.println("==========================================="); */
 
 		int menu = 0;
 		int option = 0;

@@ -8,7 +8,7 @@ public class Customer implements RegisterC {
 	
 	// Attributes
 	private String name;
-	private int cpf;
+	private String email;
 	
 	// Constructor
 	public Customer() {}
@@ -32,13 +32,13 @@ public class Customer implements RegisterC {
 	@Override
 	public Customer searchCustomer() {
 		
-		int cpf;
+		String email = null;
 		Customer customer = null;
 		Scanner entry = new Scanner(System.in);
 		
 		for (Customer c1 : customerList) {
-			if () {
-				System.out.println("Customer: "+ c1.getName() + " | " + "Cpf: "+ c1.getCpf());
+			if (c1.getEmail().equalsIgnoreCase(email)) {
+				System.out.println("Customer: "+ c1.getName() + " | " + "Cpf: "+ c1.getEmail());
 				customer = c1;
 				break;
 			}
@@ -54,21 +54,21 @@ public class Customer implements RegisterC {
 	@Override
 	public void deleteCustomer() {
 		
-		int cpf;
+	
 		String choice = null;
 		
 		
 		
 		for (Customer c1 : customerList) {
-			if (c1.getCpf().equals(cpf)) {
-				System.out.println("Customer: "+ c1.getName() + " " + " | " + "CPF: "+ c1.getCpf());
+			if (c1.getEmail().equalsIgnoreCase(email)) {
+				System.out.println("Customer: "+ c1.getName() + " " + " | " + "CPF: "+ c1.getEmail());
 			}
 		}
 		
 		choice = Keyboard.input("DO YOU CONFIRM THAT WANT TO DELETE THIS CUSTOMER? (Y/N)");
 		
 		if (choice == "y") {
-			customerList.remove(cpf);
+			customerList.remove(email);
 		}
 	}
 	
@@ -80,12 +80,12 @@ public class Customer implements RegisterC {
         this.name = fname;
     }
                
-    public int getCpf() {
-        return cpf;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
+    public void setEmail(String email) {
+        this.email = email;
     }
     
     public ArrayList<Customer> getCustomerList() {
@@ -98,7 +98,7 @@ public class Customer implements RegisterC {
 
 	@Override
 	public String toString() {
-		return "Customer [name=" + name + ", cpf=" + cpf + ", customerList=" + customerList
+		return "Customer [name=" + name + ", email=" + email + ", customerList=" + customerList
 				+ "]";
 	} 
 }
