@@ -23,7 +23,7 @@ public class Product {
 
     //Acoes ou Metodos (Funcoes)
     public void registerFilm() {
-    	Scanner entry = new Scanner(System.in);
+    	
     	Product film = new Product();
         System.out.println("===== REGISTER FILM =====");
 

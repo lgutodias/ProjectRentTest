@@ -21,10 +21,16 @@ public class Customer implements RegisterC {
 	public void addCustomer() {
 		
 		Customer c1 = new Customer();
-		
-		System.out.println("..........::::: ADD NEW CUSTOMER :::::..........");
-		
-		customerList.add(c1);
+
+        System.out.println("===== REGISTER CUSTOMER =====");
+
+	System.out.println("NOME: ");
+        c1.setName(entry.nextLine());
+
+        System.out.println("CPF: ");
+        c1.setEmail(entry.nextLine());
+
+        customerList.add(c1);
 			
 	}
 	
